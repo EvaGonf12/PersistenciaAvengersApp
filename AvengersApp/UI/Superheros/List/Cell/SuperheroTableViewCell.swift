@@ -16,6 +16,7 @@ class SuperheroTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.setupUI()
     }
     
     var viewModel: SuperheroCellViewModel? {
@@ -25,5 +26,11 @@ class SuperheroTableViewCell: UITableViewCell {
             superheroImage.image = UIImage(named: viewModel.superheroImage)
             superheroPower.image = UIImage(named: viewModel.superheroPower)
         }
+    }
+    
+    func setupUI() {
+        self.superheroImage.layer.cornerRadius = 8
+        self.superheroImage.layer.borderWidth = 4
+        self.superheroImage.layer.borderColor = UIColor(named: Colors.BlueSuperhero.rawValue)?.cgColor
     }
 }

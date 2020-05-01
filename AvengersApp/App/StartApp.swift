@@ -24,21 +24,28 @@ class StartApp: UIViewController {
     
     func start() {
         self.dataProvider.initSuperheroData()
+        self.dataProvider.initVillainData()
+
         let tabBarController = UITabBarController()
 
         let superherosVM = SuperheroesViewModel(superHeroesDataManager: self.dataProvider,
-                                                superherosDetailDataManager: self.dataProvider)
+                                                superheroDetailDataManager: self.dataProvider)
         let superherosVC = SuperherosViewController(viewModel: superherosVM)
         superherosVM.viewDelegate = superherosVC
         let superherosNavigationController = UINavigationController(rootViewController: superherosVC)
+        
+        let villainsVM = VillainsViewModel(villainsDataManager: self.dataProvider,
+                                           villainDetailDataManager: self.dataProvider)
+        let villainsVC = VillainsViewController(viewModel: villainsVM)
+        villainsVM.viewDelegate = villainsVC
+        let villainsNavigationController = UINavigationController(rootViewController: villainsVC)
 
         tabBarController.tabBar.tintColor = UIColor.init(named: Colors.Primary.rawValue)
         tabBarController.tabBar.barTintColor = UIColor.init(named: Colors.DarkGray.rawValue)
-        tabBarController.viewControllers = [superherosNavigationController]
+        tabBarController.viewControllers = [superherosNavigationController, villainsNavigationController]
         let imageSize = CGSize(width: 30, height: 30)
         tabBarController.tabBar.items?.first?.image = resizeImage(image: UIImage(named: "ic_tab_heroes")!, targetSize: imageSize)
-            //UITabBarItem(title: nil, image: UIImage(named: "ic_tab_heroes")
-//        tabBarController.tabBar.items?[1].image = UIImage(systemName: "tag")
+        tabBarController.tabBar.items?[1].image = resizeImage(image: UIImage(named: "ic_tab_villain")!, targetSize: imageSize)
 //        tabBarController.tabBar.items?[2].image = UIImage(systemName: "person.3")
         let appearance = tabBarController.tabBar.standardAppearance
         appearance.shadowImage = nil

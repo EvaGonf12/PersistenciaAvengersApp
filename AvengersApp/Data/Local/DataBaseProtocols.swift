@@ -19,7 +19,8 @@ protocol BattleDataBase {
 protocol VillainDataBase {
     var entityVillain: EntityEnum { get }
     func fecthAllVillainData() -> [NSManagedObject]?
-    func createVillain() -> NSManagedObject?
+    func fetchVillain(byID id: Int) -> NSManagedObject?
+    func initVillainData(_ heros: [Villain])
     func changeVillainPower(_ power: Int, withID id: Int) -> Bool
 }
 

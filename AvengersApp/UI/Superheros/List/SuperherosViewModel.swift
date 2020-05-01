@@ -17,14 +17,14 @@ protocol SuperheroesViewDelegate: class {
 class SuperheroesViewModel {
 
     weak var viewDelegate: SuperheroesViewDelegate?
-    let superheroesDataManager: SuperheroDataManager
-    let superherosDetailDataManager : SuperheroDetailDataManager
+    let superheroesDataManager: SuperherosDataManager
+    let superheroDetailDataManager : SuperheroDetailDataManager
     var superheroesViewModels: [SuperheroCellViewModel] = []
 
-    init(superHeroesDataManager: SuperheroDataManager,
-         superherosDetailDataManager: SuperheroDetailDataManager) {
+    init(superHeroesDataManager: SuperherosDataManager,
+         superheroDetailDataManager: SuperheroDetailDataManager) {
         self.superheroesDataManager = superHeroesDataManager
-        self.superherosDetailDataManager = superherosDetailDataManager
+        self.superheroDetailDataManager = superheroDetailDataManager
     }
     
     fileprivate func fetchSuperHeroesAndReloadUI() {
@@ -53,7 +53,7 @@ class SuperheroesViewModel {
         guard indexPath.row < superheroesViewModels.count else { return }
         let superhero = self.superheroesViewModels[indexPath.row]
         let superheroDetailViewModel = SuperheroDetailViewModel(superheroID: superhero.superheroID,
-                                                                       superheroDetailDataManager: self.superherosDetailDataManager)
+                                                                       superheroDetailDataManager: self.superheroDetailDataManager)
         self.viewDelegate?.changeToDetail(detailViewModel: superheroDetailViewModel)
 
     }

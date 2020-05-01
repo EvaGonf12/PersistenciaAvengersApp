@@ -62,22 +62,61 @@ extension DataBase: BattleDataBase {
 }
 
 extension DataBase: VillainDataBase {
-    func changeVillainPower(_ power: Int, withID id: Int) -> Bool {
-        return false
-    }
-    
-    func createVillain() -> NSManagedObject? {
-        return nil
-    }
     
     var entityVillain: EntityEnum {
         return .Villain
+    }
+    
+    func initVillainData() {
+        if let pathVillains = Bundle.main.url(forResource: "villains", withExtension: "json") {
+            do {
+                let data = try Data.init(contentsOf: pathVillains)
+                let decoder = JSONDecoder()
+                let villains = try decoder.decode([Villain].self, from: data)
+                self.initVillainData(villains)
+            } catch {
+                print(error)
+            }
+        } else {
+            fatalError("No se pudo obtener el path de la url")
+        }
+    }
+    
+    func initVillainData(_ villains: [Villain]) {
+        guard let contextMOB = context(),
+            let entity = NSEntityDescription.entity(forEntityName: entityVillain.rawValue,
+                                                    in: contextMOB) else { return }
+        
+        for villain in villains {
+            let newVillain = Villain(entity: entity, insertInto: contextMOB)
+            newVillain.id = villain.id
+            newVillain.name = villain.name
+            newVillain.image = villain.image
+            newVillain.power = villain.power
+            newVillain.villainDescription = villain.villainDescription
+        }
     }
     
     func fecthAllVillainData() -> [NSManagedObject]? {
         guard let contextMOB = context() else { return nil }
         return try? contextMOB.fetch(NSFetchRequest<NSFetchRequestResult>(entityName: entityVillain.rawValue)) as? [NSManagedObject]
     }
+    
+    func fetchVillain(byID id: Int) -> NSManagedObject? {
+        guard let contextMOB = context() else { return nil }
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityVillain.rawValue)
+        fetchRequest.predicate = NSPredicate(format: "id = \(id)")
+        
+        return try? contextMOB.fetch(fetchRequest).first as? NSManagedObject
+    }
+        
+    func changeVillainPower(_ power: Int, withID id: Int) -> Bool {
+        guard let villain = fetchVillain(byID: id) else { return false }
+        villain.setValue(power, forKey: VillainKeysEnum.Power.rawValue)
+        self.persist()
+        return true
+    }
+    
 }
 
 

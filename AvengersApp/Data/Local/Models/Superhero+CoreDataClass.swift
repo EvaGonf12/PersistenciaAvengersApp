@@ -18,7 +18,7 @@ public class Superhero: NSManagedObject {
               let entity = NSEntityDescription.entity(forEntityName: "Superhero", in: appDelegate.persistentContainer.viewContext) else {  fatalError("Failed to decode Subject!")  }
         self.init(entity: entity, insertInto: nil)
         
-        let values = try decoder.container(keyedBy: CodingKeys.self)
+        let values = try decoder.container(keyedBy: SHCodingKeys.self)
         
         self.id = try values.decode(Int16.self, forKey: .id)
         self.image = try values.decode(String.self, forKey: .image)

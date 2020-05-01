@@ -10,12 +10,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SuperheroDetailViewController" customModule="AvengersApp" customModuleProvider="target">
             <connections>
-                <outlet property="carouserView" destination="b2h-n2-bCi" id="3m6-Hc-CqJ"/>
-                <outlet property="shDescription" destination="NTP-jv-HjP" id="cHy-GW-kNn"/>
-                <outlet property="shImage" destination="qf8-av-4Ml" id="KEi-tk-Jjk"/>
-                <outlet property="shPower" destination="n2u-E7-dh1" id="y7g-Bi-3TN"/>
-                <outlet property="shPowerEditButton" destination="gmB-rO-SRP" id="iqe-48-UI0"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="carouserView" destination="b2h-n2-bCi" id="Crw-Ft-cnB"/>
+                <outlet property="shDescription" destination="NTP-jv-HjP" id="aoy-Ie-QbR"/>
+                <outlet property="shImage" destination="qf8-av-4Ml" id="a9G-wc-H3h"/>
+                <outlet property="shPower" destination="n2u-E7-dh1" id="34m-uH-aUi"/>
+                <outlet property="shPowerEditButton" destination="gmB-rO-SRP" id="55o-vN-PvC"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="K58-sG-lje"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -59,7 +59,7 @@
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="28" weight="bold"/>
                     </state>
                     <connections>
-                        <action selector="editButtonAction:" destination="-1" eventType="touchUpInside" id="o2k-zt-4ah"/>
+                        <action selector="editButtonAction:" destination="-1" eventType="touchUpInside" id="t5b-W4-R8w"/>
                     </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NTP-jv-HjP">

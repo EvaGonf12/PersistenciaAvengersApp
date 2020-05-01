@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol SuperheroDataManager {
+protocol SuperherosDataManager {
     func fetchAllSuperHeroes() -> [Superhero]
     func initSuperheroData()
 }
@@ -19,9 +19,13 @@ protocol SuperheroDetailDataManager {
 }
 
 protocol VillainDataManager {
-    func fetchAllVillain() -> [Villain]
-    func changePowerVillain(withID id: Int) -> Bool
-    func villainDataChenged()
+    func fetchAllVillains() -> [Villain]
+    func initVillainData()
+}
+
+protocol VillainDetailDataManager {
+    func fetchVillain(byID id: Int) -> Villain?
+    func changePowerVillain(_ power: Int, withID id: Int, completion: @escaping (Bool) -> ())
 }
 
 protocol BattleDataManager {

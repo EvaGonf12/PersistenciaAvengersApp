@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="230" id="YJa-54-Hol" customClass="VillainTableViewCell" customModule="AvengersApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="314" height="230"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="YJa-54-Hol" id="CWO-K1-8iW">
+                <rect key="frame" x="0.0" y="0.0" width="314" height="230"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_villain_ivan_vanko" translatesAutoresizingMaskIntoConstraints="NO" id="sqk-TX-aUd">
+                        <rect key="frame" x="37" y="15" width="240" height="140"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="140" id="2FI-Ox-AJx"/>
+                            <constraint firstAttribute="width" constant="240" id="RKv-bN-KJU"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIi-ej-ODJ">
+                        <rect key="frame" x="20" y="163" width="274" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="aJ9-1a-1Vl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" name="ColorTextDark"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_stars_3" translatesAutoresizingMaskIntoConstraints="NO" id="PpA-ac-HcE">
+                        <rect key="frame" x="97" y="192" width="120" height="25"/>
+                        <color key="tintColor" name="RedVillain"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="NyS-kF-seQ"/>
+                            <constraint firstAttribute="height" constant="25" id="tsN-4P-LBH"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" name="ColoBgPink"/>
+                <constraints>
+                    <constraint firstItem="FIi-ej-ODJ" firstAttribute="leading" secondItem="CWO-K1-8iW" secondAttribute="leading" constant="20" id="1rM-ck-1ks"/>
+                    <constraint firstItem="PpA-ac-HcE" firstAttribute="centerX" secondItem="CWO-K1-8iW" secondAttribute="centerX" id="GAY-Vw-stT"/>
+                    <constraint firstItem="FIi-ej-ODJ" firstAttribute="top" secondItem="sqk-TX-aUd" secondAttribute="bottom" constant="8" id="MkH-lS-OPL"/>
+                    <constraint firstAttribute="trailing" secondItem="FIi-ej-ODJ" secondAttribute="trailing" constant="20" id="btd-bt-asM"/>
+                    <constraint firstItem="PpA-ac-HcE" firstAttribute="top" secondItem="FIi-ej-ODJ" secondAttribute="bottom" constant="8" id="dvo-LE-UaG"/>
+                    <constraint firstItem="sqk-TX-aUd" firstAttribute="top" secondItem="CWO-K1-8iW" secondAttribute="top" constant="15" id="l5d-tv-ctJ"/>
+                    <constraint firstItem="sqk-TX-aUd" firstAttribute="centerX" secondItem="CWO-K1-8iW" secondAttribute="centerX" id="mgb-We-H5I"/>
+                    <constraint firstAttribute="bottom" secondItem="PpA-ac-HcE" secondAttribute="bottom" constant="15" id="uoi-YB-lOx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="LgM-cI-iL7"/>
+            <connections>
+                <outlet property="villainImage" destination="sqk-TX-aUd" id="Ug5-Ix-MeU"/>
+                <outlet property="villainName" destination="FIi-ej-ODJ" id="Juh-op-9bo"/>
+                <outlet property="villainPower" destination="PpA-ac-HcE" id="gpp-jb-4YL"/>
+            </connections>
+            <point key="canvasLocation" x="-84.057971014492765" y="27.455357142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_stars_3" width="98" height="17"/>
+        <image name="img_villain_ivan_vanko" width="670" height="414"/>
+        <namedColor name="ColoBgPink">
+            <color red="0.88599997758865356" green="0.81599998474121094" blue="0.83899998664855957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorTextDark">
+            <color red="0.18799999356269836" green="0.27500000596046448" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="RedVillain">
+            <color red="0.76078431372549016" green="0.0078431372549019607" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

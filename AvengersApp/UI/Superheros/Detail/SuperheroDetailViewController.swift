@@ -14,7 +14,7 @@ class SuperheroDetailViewController: UIViewController {
     @IBOutlet weak var shImage: UIImageView!
     @IBOutlet weak var shPower: UIImageView!
     @IBOutlet weak var shPowerEditButton: UIButton!
-    @IBOutlet weak var shDescription: UILabel!
+    @IBOutlet weak var shDescription: UITextView!
     @IBOutlet weak var carouserView: UIView!
     
     fileprivate let collectionView: UICollectionView = {

@@ -23,6 +23,14 @@ enum SuperheroKeysEnum: String {
     case SuperheroDescription = "superheroDescription"
 }
 
+enum VillainKeysEnum: String {
+    case ID = "id"
+    case Image = "image"
+    case Name = "name"
+    case Power = "power"
+    case SuperheroDescription = "superheroDescription"
+}
+
 enum Colors: String {
     case Pink = "ColoBgPink"
     case BlueBg = "ColorBlueBg"
@@ -33,4 +41,8 @@ enum Colors: String {
     case TextBlue = "ColorTextBlue"
     case TextDark = "ColorTextDark"
     case WhiteBg = "ColorWhiteBg"
+    case BlueSuperhero = "BlueSuperhero"
+    case RedVillain = "RedVillain"
+    case Win = "Win"
+    case Lost = "Lost"
 }
