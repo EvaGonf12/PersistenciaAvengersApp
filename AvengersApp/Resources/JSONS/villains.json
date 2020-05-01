@@ -1,0 +1,72 @@
+[
+  {
+    "id":0,
+    "name" : "Dormammu",
+    "image" : "img_villain_dormammu",
+    "villainDescription" : "Dormammu es una entidad primordial extremadamente poderosa y malévola que gobierna la Dimensión Oscura. Dormammu convenció a Kaecilius de usar su poder para destruir a los Maestros de las Artes Místicas y llevar la Dimensión Oscura a la Tierra. Antes de que Dormammu pudiera completar sus planes, fue confrontado por Stephen Strange, quien usó el Ojo de Agamotto para atrapar a Dormammu en un interminable bucle temporal y aceptó abandonar la Tierra, llevándose a Kaecilius y sus Fanáticos presentes con él.",
+    "power" : 4
+  },
+  {
+    "id":1,
+    "name" : "Ego",
+    "image" : "img_villain_ego",
+    "villainDescription" : "Ego fue un celestial extremadamente poderoso y el padre de Peter Quill. Ego además de ser despiadado y narcisista, poseía un complejo de dios y sólo pensaba en encontrar su propósito o el porqué de su existencia, así que decidió hacerlo conquistando todo el universo a través de un evento denominado por él mismo como La Expansión.",
+    "power" : 3
+  },
+  {
+    "id":2,
+    "name" : "Hela",
+    "image" : "img_villain_hela",
+    "villainDescription" : "Hela Odinsdottir fue la Diosa de la Muerte y la antigua Ejecutora de Asgard, que fue encarcelada por milenios en Hel. Ella fue liberada después de la muerte de su padre Odín e inmediatamente enfrentó a sus hermanos menores, Thor y Loki.",
+    "power" : 5
+  },
+  {
+    "id":3,
+    "name" : "Ivan Vanko",
+    "image" : "img_villain_ivan_vanko",
+    "villainDescription" : "Ivan Antonovich Vanko fue un físico ruso e hijo del ex científico de Industrias Stark, Anton Vanko. Cuando su padre murió en la pobreza debido a la desacreditación que Howard Stark le causó, Vanko juró vengarse de la familia Stark y atacó al hijo de Howard, Anthony.",
+    "power" : 2
+  },
+  {
+    "id":4,
+    "name" : "Johann Schmidt",
+    "image" : "img_villain_johann_schmidt",
+    "villainDescription" : "Johann Schmidt es el ex líder de HYDRA, una división de armas especiales de la Nazi Schutzstaffel y la encarnación moderna de la sociedad antigua de HYDRA durante la Segunda Guerra Mundial. Schmidt era un científico brillante, que se abrió camino a través de las filas de la élite nazi hasta convertirse en un hombre de confianza del propio Adolf Hitler.",
+    "power" : 2
+  },
+  {
+    "id":5,
+    "name" : "Malekith",
+    "image" : "img_villain_malekith",
+    "villainDescription" : "Malekith (Mälekith en Shiväisith) fue el malvado líder de los Elfos Oscuros. Habiendo nacido en un mundo completamente oscuro, Malekith guió a su pueblo en una guerra contra los Asgardianos, utilizando una antigua fuerza de destrucción conocida como el Éter.",
+    "power" : 3
+  },
+  {
+    "id":6,
+    "name" : "Ronan",
+    "image" : "img_villain_ronan",
+    "villainDescription" : "Ronan, también conocido como Ronan el Acusador, fue un miembro radical de la raza Kree, y un militarista feroz y genocida. Durante la Guerra entre el Imperio Kree y el Imperio Skrull, Ronan trabajó con la Starforce después de la Emboscada en Torfa para eliminar a lo último de los refugiados Skrulls.",
+    "power" : 3
+  },
+  {
+    "id":7,
+    "name" : "Thanos",
+    "image" : "img_villain_thanos",
+    "villainDescription" : "Thanos fue un señor de la guerra y genocida de Titán, cuyo objetivo principal era traer estabilidad al universo, ya que creía que su enorme población inevitablemente agotaría todo el suministro de recursos disponibles y eso condenaría a las especies a morir.",
+    "power" : 5
+  },
+  {
+    "id":8,
+    "name" : "Ultron",
+    "image" : "img_villain_ultron",
+    "villainDescription" : "Ultrón fue una inteligencia artificial programada para el mantenimiento de la paz creada por Anthony Stark y Bruce Banner a partir de un código descifrado derivado de la Gema de la Mente del Cetro de Loki, con la intención de proteger la Tierra de amenazas internas y externas.",
+    "power" : 2
+  },
+  {
+    "id":9,
+    "name" : "Yon Rogg",
+    "image" : "img_villain_yon_rogg",
+    "villainDescription" : "Yon-Rogg es un Comandante Kree y el líder de Starforce, con una devota lealtad a la Inteligencia Suprema y a las ideologías del Imperio Kree.",
+    "power" : 3
+  }
+]

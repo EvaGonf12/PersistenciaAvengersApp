@@ -1,0 +1,72 @@
+[
+  {
+    "id":0,
+    "name" : "American Captain",
+    "image" : "img_heroe_america_captain",
+    "superheroDescription" : "El Capitán Steven Grant 'Steve' Rogers es un veterano de la Segunda Guerra Mundial, miembro fundador de los Vengadores y el primer superhéroe del mundo.",
+    "power" : 4
+  },
+  {
+    "id":1,
+    "name" : "Black Panther",
+    "image" : "img_heroe_black_panther",
+    "superheroDescription" : "T'Challa es el Rey de Wakanda y el titular del protector de su tribu, la Pantera Negra.",
+    "power" : 3
+  },
+  {
+    "id":2,
+    "name" : "Black Widow",
+    "image" : "img_heroe_black_widow",
+    "superheroDescription" : "Natalia Alianovna 'Natasha' Romanoff, mejor conocida como Black Widow, fue una antigua agente especial de S.H.I.E.L.D. y miembro fundadora de los Vengadores.",
+    "power" : 2
+  },
+  {
+    "id":3,
+    "name" : "Dr Strange",
+    "image" : "img_heroe_dr_strange",
+    "superheroDescription" : "El Doctor Stephen Vincent Strange es un poderoso hechicero y miembro destacado de los Maestros de las Artes Místicas. Él era un neurocirujano exitoso y arrogante, hasta que un accidente automovilístico dañó gravemente sus manos, lo que le hizo iniciar un viaje que lo llevó a Kamar-Taj.",
+    "power" : 4
+  },
+  {
+    "id":4,
+    "name" : "Gamora",
+    "image" : "img_heroe_gamora",
+    "superheroDescription" : "Gamora es una Zehoberei y la hija adoptiva de Thanos, al igual que Nebula, después que este atacara su planeta natal. Ella se volvió una asesina y trabajó para él durante años antes de traicionarlo en un intento por liberarse.",
+    "power" : 2
+  },
+  {
+    "id":5,
+    "name" : "Hulk",
+    "image" : "img_heroe_hulk",
+    "superheroDescription" : "El Doctor Robert Bruce Banner es un científico de renombre y miembro fundador de los Vengadores. Él era un experto en la bioquímica, la física nuclear y la radiación gamma, por lo que el General Thaddeus Ross lo reclutó para recrear el Suero del Súper Soldado, pero esto resultó en un experimento fallido de radiación gamma, que convirtió a Banner en un monstruo verde llamado Hulk.",
+    "power" : 4
+  },
+  {
+    "id":6,
+    "name" : "Ironman",
+    "image" : "img_heroe_ironman",
+    "superheroDescription" : "Anthony Edward 'Tony' Stark fue un multimillonario industrial, anterior Director General de Industrias Stark y miembro fundador de los Vengadores. Siendo el hijo de Howard Stark y poseyendo un gran intelecto, Stark se volvió un inventor de armas mundialmente reconocido.",
+    "power" : 3
+  },
+  {
+    "id":7,
+    "name" : "Marbel Captain",
+    "image" : "img_heroe_marvel_captain",
+    "superheroDescription" : "La Capitana Carol Danvers es una ex piloto de la Fuerza Aérea de los Estados Unidos que, al destruir el Motor de velocidad de la luz fabricado por su mentora Mar-Vell, fue expuesta a la energía del Teseracto, obteniendo poderes cósmicos y fue raptada para servir al Imperio Kree.",
+    "power" : 5
+  },
+  {
+    "id":8,
+    "name" : "Spiderman",
+    "image" : "img_heroe_spiderman",
+    "superheroDescription" : "Peter Benjamin Parker es un estudiante de la Escuela de Ciencia y Tecnología de Midtown que, después de adquirir sus habilidades a causa de la mordida de una araña radiactiva, eligió combatir el crimen como el Hombre Araña.",
+    "power" : 3
+  },
+  {
+    "id":9,
+    "name" : "Thor",
+    "image" : "img_heroe_thor",
+    "superheroDescription" : "Thor Odinson es el Dios del Trueno, anterior Rey de Nuevo Asgard y miembro fundador de los Vengadores.",
+    "power" : 5
+  }
+]
