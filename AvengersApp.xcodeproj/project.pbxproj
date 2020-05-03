@@ -94,6 +94,7 @@
 		5809F8672454B77C00FC4946 /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
 		585B5091245ED7F200F626A1 /* StructSuperhero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructSuperhero.swift; sourceTree = "<group>"; };
 		585B5093245ED86C00F626A1 /* StructVillain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructVillain.swift; sourceTree = "<group>"; };
+		585B5095245F337F00F626A1 /* PopupDialog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PopupDialog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58D022E424559E8C00211B48 /* SuperheroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperheroTableViewCell.swift; sourceTree = "<group>"; };
 		58D022E524559E8C00211B48 /* SuperheroTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuperheroTableViewCell.xib; sourceTree = "<group>"; };
 		58D022EA2455B2D800211B48 /* DataManagerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerProtocols.swift; sourceTree = "<group>"; };
@@ -423,6 +424,7 @@
 		90B58C1CECE9B64737B4FE77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				585B5095245F337F00F626A1 /* PopupDialog.framework */,
 				A5CA57BD7D22E33F7D3D10DE /* Pods_AvengersApp.framework */,
 			);
 			name = Frameworks;
@@ -736,6 +738,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AFHS35RNJQ;
 				INFOPLIST_FILE = AvengersApp/App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -755,6 +758,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AFHS35RNJQ;
 				INFOPLIST_FILE = AvengersApp/App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
