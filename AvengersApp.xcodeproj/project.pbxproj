@@ -13,10 +13,9 @@
 		5809F7F62454B41D00FC4946 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5809F7F52454B41D00FC4946 /* Assets.xcassets */; };
 		5809F7F92454B41D00FC4946 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5809F7F72454B41D00FC4946 /* LaunchScreen.storyboard */; };
 		5809F8082454B4C400FC4946 /* StartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5809F8072454B4C400FC4946 /* StartApp.swift */; };
-		5809F80F2454B4F800FC4946 /* BattleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5809F8092454B4F700FC4946 /* BattleViewModel.swift */; };
+		5809F80F2454B4F800FC4946 /* BattlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5809F8092454B4F700FC4946 /* BattlesViewModel.swift */; };
 		5809F8102454B4F800FC4946 /* BattleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5809F80A2454B4F800FC4946 /* BattleCellViewModel.swift */; };
 		5809F8112454B4F800FC4946 /* BattlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5809F80B2454B4F800FC4946 /* BattlesViewController.swift */; };
-		5809F8122454B4F800FC4946 /* BattlesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5809F80C2454B4F800FC4946 /* BattlesViewController.xib */; };
 		5809F8132454B4F800FC4946 /* BattleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5809F80D2454B4F800FC4946 /* BattleTableViewCell.swift */; };
 		5809F8142454B4F800FC4946 /* BattleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5809F80E2454B4F800FC4946 /* BattleTableViewCell.xib */; };
 		5809F81E2454B50100FC4946 /* SuperherosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5809F8182454B50100FC4946 /* SuperherosViewModel.swift */; };
@@ -37,19 +36,26 @@
 		5809F8572454B60C00FC4946 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5809F8562454B60B00FC4946 /* DataBase.swift */; };
 		5809F8602454B61D00FC4946 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5809F85B2454B61D00FC4946 /* DataProvider.swift */; };
 		584E42882454BBD500781FC1 /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5809F8662454B77C00FC4946 /* DataBase.xcdatamodeld */; };
-		584E42942454C5B500781FC1 /* Superhero+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584E42922454C5B500781FC1 /* Superhero+CoreDataClass.swift */; };
-		584E42952454C5B500781FC1 /* Superhero+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584E42932454C5B500781FC1 /* Superhero+CoreDataProperties.swift */; };
+		585B5092245ED7F200F626A1 /* StructSuperhero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585B5091245ED7F200F626A1 /* StructSuperhero.swift */; };
+		585B5094245ED86C00F626A1 /* StructVillain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585B5093245ED86C00F626A1 /* StructVillain.swift */; };
 		58D022E624559E8C00211B48 /* SuperheroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D022E424559E8C00211B48 /* SuperheroTableViewCell.swift */; };
 		58D022E724559E8C00211B48 /* SuperheroTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58D022E524559E8C00211B48 /* SuperheroTableViewCell.xib */; };
 		58D022EB2455B2D800211B48 /* DataManagerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D022EA2455B2D800211B48 /* DataManagerProtocols.swift */; };
 		58D022ED2455B33300211B48 /* DataBaseProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D022EC2455B33300211B48 /* DataBaseProtocols.swift */; };
-		58DA04D024578878001123BC /* CarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DA04CF24578878001123BC /* CarouselCollectionViewCell.swift */; };
+		58DA04D024578878001123BC /* CarouselBattlesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DA04CF24578878001123BC /* CarouselBattlesViewCell.swift */; };
 		58DA04D9245A047F001123BC /* PowerPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DA04D7245A047F001123BC /* PowerPopupViewController.swift */; };
 		58DA04DA245A047F001123BC /* PowerPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58DA04D8245A047F001123BC /* PowerPopupViewController.xib */; };
 		58EF22E224577A0B00857E09 /* SuperheroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EF22E024577A0B00857E09 /* SuperheroDetailViewController.swift */; };
 		58EF22E324577A0B00857E09 /* SuperheroDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58EF22E124577A0B00857E09 /* SuperheroDetailViewController.xib */; };
-		58F564FC245C444800900DCF /* Villain+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F564FA245C444800900DCF /* Villain+CoreDataClass.swift */; };
-		58F564FD245C444800900DCF /* Villain+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F564FB245C444800900DCF /* Villain+CoreDataProperties.swift */; };
+		58F56502245D860F00900DCF /* CreateBattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F56500245D860F00900DCF /* CreateBattleViewController.swift */; };
+		58F56503245D860F00900DCF /* CreateBattleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58F56501245D860F00900DCF /* CreateBattleViewController.xib */; };
+		58F56505245D8F3F00900DCF /* CreateBattleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F56504245D8F3F00900DCF /* CreateBattleViewModel.swift */; };
+		58F5650D245D91F000900DCF /* CarouselCompetitorsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F5650C245D91F000900DCF /* CarouselCompetitorsViewCell.swift */; };
+		58F56518245DC5EE00900DCF /* CompetitorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F56516245DC5EE00900DCF /* CompetitorTableViewCell.swift */; };
+		58F56519245DC5EE00900DCF /* CompetitorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58F56517245DC5EE00900DCF /* CompetitorTableViewCell.xib */; };
+		58F5651B245DC60700900DCF /* CompetitorCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F5651A245DC60700900DCF /* CompetitorCellViewModel.swift */; };
+		58F5651D245DC7F300900DCF /* ListCompetitorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F5651C245DC7F300900DCF /* ListCompetitorViewController.swift */; };
+		58F5651F245DC8A200900DCF /* ListCompetitorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F5651E245DC8A200900DCF /* ListCompetitorViewModel.swift */; };
 		F1335E33F94E33153BCD5FAD /* Pods_AvengersApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CA57BD7D22E33F7D3D10DE /* Pods_AvengersApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,10 +69,9 @@
 		5809F7F82454B41D00FC4946 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5809F7FA2454B41D00FC4946 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5809F8072454B4C400FC4946 /* StartApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartApp.swift; sourceTree = "<group>"; };
-		5809F8092454B4F700FC4946 /* BattleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleViewModel.swift; sourceTree = "<group>"; };
+		5809F8092454B4F700FC4946 /* BattlesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattlesViewModel.swift; sourceTree = "<group>"; };
 		5809F80A2454B4F800FC4946 /* BattleCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleCellViewModel.swift; sourceTree = "<group>"; };
 		5809F80B2454B4F800FC4946 /* BattlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattlesViewController.swift; sourceTree = "<group>"; };
-		5809F80C2454B4F800FC4946 /* BattlesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BattlesViewController.xib; sourceTree = "<group>"; };
 		5809F80D2454B4F800FC4946 /* BattleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleTableViewCell.swift; sourceTree = "<group>"; };
 		5809F80E2454B4F800FC4946 /* BattleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BattleTableViewCell.xib; sourceTree = "<group>"; };
 		5809F8182454B50100FC4946 /* SuperherosViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperherosViewModel.swift; sourceTree = "<group>"; };
@@ -87,19 +92,26 @@
 		5809F8562454B60B00FC4946 /* DataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
 		5809F85B2454B61D00FC4946 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		5809F8672454B77C00FC4946 /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
-		584E42922454C5B500781FC1 /* Superhero+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Superhero+CoreDataClass.swift"; sourceTree = "<group>"; };
-		584E42932454C5B500781FC1 /* Superhero+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Superhero+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		585B5091245ED7F200F626A1 /* StructSuperhero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructSuperhero.swift; sourceTree = "<group>"; };
+		585B5093245ED86C00F626A1 /* StructVillain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructVillain.swift; sourceTree = "<group>"; };
 		58D022E424559E8C00211B48 /* SuperheroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperheroTableViewCell.swift; sourceTree = "<group>"; };
 		58D022E524559E8C00211B48 /* SuperheroTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuperheroTableViewCell.xib; sourceTree = "<group>"; };
 		58D022EA2455B2D800211B48 /* DataManagerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerProtocols.swift; sourceTree = "<group>"; };
 		58D022EC2455B33300211B48 /* DataBaseProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseProtocols.swift; sourceTree = "<group>"; };
-		58DA04CF24578878001123BC /* CarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCollectionViewCell.swift; sourceTree = "<group>"; };
+		58DA04CF24578878001123BC /* CarouselBattlesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselBattlesViewCell.swift; sourceTree = "<group>"; };
 		58DA04D7245A047F001123BC /* PowerPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerPopupViewController.swift; sourceTree = "<group>"; };
 		58DA04D8245A047F001123BC /* PowerPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PowerPopupViewController.xib; sourceTree = "<group>"; };
 		58EF22E024577A0B00857E09 /* SuperheroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperheroDetailViewController.swift; sourceTree = "<group>"; };
 		58EF22E124577A0B00857E09 /* SuperheroDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuperheroDetailViewController.xib; sourceTree = "<group>"; };
-		58F564FA245C444800900DCF /* Villain+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Villain+CoreDataClass.swift"; sourceTree = "<group>"; };
-		58F564FB245C444800900DCF /* Villain+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Villain+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		58F56500245D860F00900DCF /* CreateBattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBattleViewController.swift; sourceTree = "<group>"; };
+		58F56501245D860F00900DCF /* CreateBattleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateBattleViewController.xib; sourceTree = "<group>"; };
+		58F56504245D8F3F00900DCF /* CreateBattleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBattleViewModel.swift; sourceTree = "<group>"; };
+		58F5650C245D91F000900DCF /* CarouselCompetitorsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCompetitorsViewCell.swift; sourceTree = "<group>"; };
+		58F56516245DC5EE00900DCF /* CompetitorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitorTableViewCell.swift; sourceTree = "<group>"; };
+		58F56517245DC5EE00900DCF /* CompetitorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompetitorTableViewCell.xib; sourceTree = "<group>"; };
+		58F5651A245DC60700900DCF /* CompetitorCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitorCellViewModel.swift; sourceTree = "<group>"; };
+		58F5651C245DC7F300900DCF /* ListCompetitorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCompetitorViewController.swift; sourceTree = "<group>"; };
+		58F5651E245DC8A200900DCF /* ListCompetitorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCompetitorViewModel.swift; sourceTree = "<group>"; };
 		6EF6094673542F76D53DF0C9 /* Pods-AvengersApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvengersApp.debug.xcconfig"; path = "Target Support Files/Pods-AvengersApp/Pods-AvengersApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A5CA57BD7D22E33F7D3D10DE /* Pods_AvengersApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvengersApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -161,10 +173,10 @@
 			children = (
 				5809F7F22454B41A00FC4946 /* Main.storyboard */,
 				5809F7F72454B41D00FC4946 /* LaunchScreen.storyboard */,
+				58F5650A245D919D00900DCF /* Popups */,
 				58F564F9245C3B4D00900DCF /* Carousel */,
+				58F56506245D90E000900DCF /* Competitors */,
 				5809F8062454B48800FC4946 /* Battles */,
-				5809F8052454B48100FC4946 /* Villains */,
-				5809F8042454B47900FC4946 /* Superheros */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -199,9 +211,7 @@
 		5809F8052454B48100FC4946 /* Villains */ = {
 			isa = PBXGroup;
 			children = (
-				5809F82B2454B52500FC4946 /* VillainsViewModel.swift */,
-				5809F82C2454B52500FC4946 /* VillainsViewController.swift */,
-				58F564F8245C37A600900DCF /* Cell */,
+				58F56521245DD89300900DCF /* List */,
 				5809F8342454B52700FC4946 /* Detail */,
 			);
 			path = Villains;
@@ -210,12 +220,10 @@
 		5809F8062454B48800FC4946 /* Battles */ = {
 			isa = PBXGroup;
 			children = (
-				5809F80A2454B4F800FC4946 /* BattleCellViewModel.swift */,
+				5809F8092454B4F700FC4946 /* BattlesViewModel.swift */,
 				5809F80B2454B4F800FC4946 /* BattlesViewController.swift */,
-				5809F80C2454B4F800FC4946 /* BattlesViewController.xib */,
-				5809F80D2454B4F800FC4946 /* BattleTableViewCell.swift */,
-				5809F80E2454B4F800FC4946 /* BattleTableViewCell.xib */,
-				5809F8092454B4F700FC4946 /* BattleViewModel.swift */,
+				58F564FE245D78EF00900DCF /* Cell */,
+				58F564FF245D84E300900DCF /* CreateBattle */,
 			);
 			path = Battles;
 			sourceTree = "<group>";
@@ -271,10 +279,8 @@
 		5809F8482454B56300FC4946 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				58F564FA245C444800900DCF /* Villain+CoreDataClass.swift */,
-				58F564FB245C444800900DCF /* Villain+CoreDataProperties.swift */,
-				584E42922454C5B500781FC1 /* Superhero+CoreDataClass.swift */,
-				584E42932454C5B500781FC1 /* Superhero+CoreDataProperties.swift */,
+				585B5091245ED7F200F626A1 /* StructSuperhero.swift */,
+				585B5093245ED86C00F626A1 /* StructVillain.swift */,
 				5809F8662454B77C00FC4946 /* DataBase.xcdatamodeld */,
 			);
 			path = Models;
@@ -322,11 +328,87 @@
 		58F564F9245C3B4D00900DCF /* Carousel */ = {
 			isa = PBXGroup;
 			children = (
-				58DA04CF24578878001123BC /* CarouselCollectionViewCell.swift */,
+				58DA04CF24578878001123BC /* CarouselBattlesViewCell.swift */,
+				58F5650C245D91F000900DCF /* CarouselCompetitorsViewCell.swift */,
+			);
+			path = Carousel;
+			sourceTree = "<group>";
+		};
+		58F564FE245D78EF00900DCF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5809F80A2454B4F800FC4946 /* BattleCellViewModel.swift */,
+				5809F80D2454B4F800FC4946 /* BattleTableViewCell.swift */,
+				5809F80E2454B4F800FC4946 /* BattleTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		58F564FF245D84E300900DCF /* CreateBattle */ = {
+			isa = PBXGroup;
+			children = (
+				58F56504245D8F3F00900DCF /* CreateBattleViewModel.swift */,
+				58F56500245D860F00900DCF /* CreateBattleViewController.swift */,
+				58F56501245D860F00900DCF /* CreateBattleViewController.xib */,
+				58F56520245DC8AA00900DCF /* ListCompetitor */,
+			);
+			path = CreateBattle;
+			sourceTree = "<group>";
+		};
+		58F56506245D90E000900DCF /* Competitors */ = {
+			isa = PBXGroup;
+			children = (
+				5809F8042454B47900FC4946 /* Superheros */,
+				5809F8052454B48100FC4946 /* Villains */,
+			);
+			path = Competitors;
+			sourceTree = "<group>";
+		};
+		58F5650A245D919D00900DCF /* Popups */ = {
+			isa = PBXGroup;
+			children = (
+				58F5650B245D91B200900DCF /* ChangePower */,
+			);
+			path = Popups;
+			sourceTree = "<group>";
+		};
+		58F5650B245D91B200900DCF /* ChangePower */ = {
+			isa = PBXGroup;
+			children = (
 				58DA04D7245A047F001123BC /* PowerPopupViewController.swift */,
 				58DA04D8245A047F001123BC /* PowerPopupViewController.xib */,
 			);
-			path = Carousel;
+			path = ChangePower;
+			sourceTree = "<group>";
+		};
+		58F56515245DC5B500900DCF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				58F5651A245DC60700900DCF /* CompetitorCellViewModel.swift */,
+				58F56516245DC5EE00900DCF /* CompetitorTableViewCell.swift */,
+				58F56517245DC5EE00900DCF /* CompetitorTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		58F56520245DC8AA00900DCF /* ListCompetitor */ = {
+			isa = PBXGroup;
+			children = (
+				58F5651E245DC8A200900DCF /* ListCompetitorViewModel.swift */,
+				58F5651C245DC7F300900DCF /* ListCompetitorViewController.swift */,
+				58F56515245DC5B500900DCF /* Cell */,
+			);
+			path = ListCompetitor;
+			sourceTree = "<group>";
+		};
+		58F56521245DD89300900DCF /* List */ = {
+			isa = PBXGroup;
+			children = (
+				5809F82B2454B52500FC4946 /* VillainsViewModel.swift */,
+				5809F82C2454B52500FC4946 /* VillainsViewController.swift */,
+				58F564F8245C37A600900DCF /* Cell */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 		614DD74B1A8E3899A96E736F /* Pods */ = {
@@ -406,9 +488,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5809F8122454B4F800FC4946 /* BattlesViewController.xib in Resources */,
 				58EF22E324577A0B00857E09 /* SuperheroDetailViewController.xib in Resources */,
 				5809F8142454B4F800FC4946 /* BattleTableViewCell.xib in Resources */,
+				58F56503245D860F00900DCF /* CreateBattleViewController.xib in Resources */,
 				5809F8532454B5FB00FC4946 /* villains.json in Resources */,
 				5809F7F92454B41D00FC4946 /* LaunchScreen.storyboard in Resources */,
 				5809F7F62454B41D00FC4946 /* Assets.xcassets in Resources */,
@@ -418,6 +500,7 @@
 				5809F8522454B5FB00FC4946 /* superheros.json in Resources */,
 				58DA04DA245A047F001123BC /* PowerPopupViewController.xib in Resources */,
 				58D022E724559E8C00211B48 /* SuperheroTableViewCell.xib in Resources */,
+				58F56519245DC5EE00900DCF /* CompetitorTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,35 +553,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				585B5094245ED86C00F626A1 /* StructVillain.swift in Sources */,
 				58D022ED2455B33300211B48 /* DataBaseProtocols.swift in Sources */,
 				58DA04D9245A047F001123BC /* PowerPopupViewController.swift in Sources */,
+				58F5651D245DC7F300900DCF /* ListCompetitorViewController.swift in Sources */,
 				584E42882454BBD500781FC1 /* DataBase.xcdatamodeld in Sources */,
-				5809F80F2454B4F800FC4946 /* BattleViewModel.swift in Sources */,
-				58DA04D024578878001123BC /* CarouselCollectionViewCell.swift in Sources */,
+				5809F80F2454B4F800FC4946 /* BattlesViewModel.swift in Sources */,
+				58F56505245D8F3F00900DCF /* CreateBattleViewModel.swift in Sources */,
+				58DA04D024578878001123BC /* CarouselBattlesViewCell.swift in Sources */,
 				5809F8262454B51000FC4946 /* SuperheroDetailViewModel.swift in Sources */,
 				5809F8082454B4C400FC4946 /* StartApp.swift in Sources */,
 				58EF22E224577A0B00857E09 /* SuperheroDetailViewController.swift in Sources */,
 				5809F7ED2454B41A00FC4946 /* AppDelegate.swift in Sources */,
 				5809F82F2454B52500FC4946 /* VillainTableViewCell.swift in Sources */,
 				5809F7EF2454B41A00FC4946 /* SceneDelegate.swift in Sources */,
+				58F5650D245D91F000900DCF /* CarouselCompetitorsViewCell.swift in Sources */,
 				58D022EB2455B2D800211B48 /* DataManagerProtocols.swift in Sources */,
 				5809F8322454B52500FC4946 /* VillainsViewController.swift in Sources */,
-				584E42952454C5B500781FC1 /* Superhero+CoreDataProperties.swift in Sources */,
 				5809F8132454B4F800FC4946 /* BattleTableViewCell.swift in Sources */,
 				58D022E624559E8C00211B48 /* SuperheroTableViewCell.swift in Sources */,
 				5809F81F2454B50100FC4946 /* SuperherosViewController.swift in Sources */,
 				5809F8602454B61D00FC4946 /* DataProvider.swift in Sources */,
 				5809F8392454B53100FC4946 /* VillainDetailViewModel.swift in Sources */,
 				5809F8202454B50100FC4946 /* SuperheroCellViewModel.swift in Sources */,
+				58F56502245D860F00900DCF /* CreateBattleViewController.swift in Sources */,
 				5809F8552454B60200FC4946 /* Enums.swift in Sources */,
-				58F564FC245C444800900DCF /* Villain+CoreDataClass.swift in Sources */,
 				5809F8572454B60C00FC4946 /* DataBase.swift in Sources */,
+				58F5651B245DC60700900DCF /* CompetitorCellViewModel.swift in Sources */,
 				5809F8332454B52500FC4946 /* VillainCellViewModel.swift in Sources */,
-				584E42942454C5B500781FC1 /* Superhero+CoreDataClass.swift in Sources */,
+				58F5651F245DC8A200900DCF /* ListCompetitorViewModel.swift in Sources */,
 				5809F8112454B4F800FC4946 /* BattlesViewController.swift in Sources */,
 				5809F8312454B52500FC4946 /* VillainsViewModel.swift in Sources */,
-				58F564FD245C444800900DCF /* Villain+CoreDataProperties.swift in Sources */,
 				5809F81E2454B50100FC4946 /* SuperherosViewModel.swift in Sources */,
+				58F56518245DC5EE00900DCF /* CompetitorTableViewCell.swift in Sources */,
+				585B5092245ED7F200F626A1 /* StructSuperhero.swift in Sources */,
 				5809F8102454B4F800FC4946 /* BattleCellViewModel.swift in Sources */,
 				5809F8382454B53100FC4946 /* VillainDetailViewController.swift in Sources */,
 			);

@@ -27,7 +27,7 @@ class SuperheroDetailViewModel {
     var superheroPower: Int?
     var superheroPowerImg: String?
     var superheroDescription: String?
-    var superheroBattles: [String]?
+    var superheroBattles: [Battle]?
     
 
     init(superheroID: Int, superheroDetailDataManager: SuperheroDetailDataManager) {
@@ -36,13 +36,13 @@ class SuperheroDetailViewModel {
     }
     
     func fetchSuperHeroAndReloadUI() {
-        guard let superhero = self.superheroDetailDataManager.fetchSuperhero(byID: self.superheroID) else {return}
+        guard let (superhero, battles) = self.superheroDetailDataManager.fetchSuperhero(byID: self.superheroID) else {return}
         self.superheroImage = superhero.image
         self.superheroName = superhero.name
         self.superheroPower = Int(superhero.power)
         self.superheroPowerImg = "ic_stars_\(superhero.power)"
         self.superheroDescription = superhero.superheroDescription
-        self.superheroBattles = ["Batalla 1", "Batalla 2", "Batalla 3", "Batalla 4", "Batalla 5"]
+        self.superheroBattles = battles
         self.detailViewDelegate?.superheroDetailFetched()
     }
     

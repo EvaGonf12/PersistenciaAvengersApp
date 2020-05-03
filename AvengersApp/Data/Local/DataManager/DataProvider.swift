@@ -34,9 +34,10 @@ extension DataProvider: SuperherosDataManager {
 }
 
 extension DataProvider: SuperheroDetailDataManager {
-    func fetchSuperhero(byID id: Int) -> Superhero? {
-        guard let superhero = self.database?.fetchSuperhero(byID: id) as? Superhero else { return nil }
-        return superhero
+    func fetchSuperhero(byID id: Int) -> (Superhero, [Battle])? {
+        guard let superhero = self.database?.fetchSuperhero(byID: id) as? Superhero,
+              let battles = superhero.battles?.allObjects as? [Battle] else { return nil }
+        return (superhero, battles)
     }
     
     func changePowerSuperhero(_ power: Int, withID id: Int, completion: @escaping (Bool) -> ()) {
@@ -60,9 +61,10 @@ extension DataProvider: VillainDataManager {
 }
 
 extension DataProvider: VillainDetailDataManager {
-    func fetchVillain(byID id: Int) -> Villain? {
-        guard let superhero = self.database?.fetchVillain(byID: id) as? Villain else { return nil }
-        return superhero
+    func fetchVillain(byID id: Int) -> (Villain, [Battle])? {
+        guard let villain = self.database?.fetchVillain(byID: id) as? Villain,
+              let battles = villain.battles?.allObjects as? [Battle] else { return nil }
+        return (villain, battles)
     }
     
     func changePowerVillain(_ power: Int, withID id: Int, completion: @escaping (Bool) -> ()) {
@@ -73,8 +75,16 @@ extension DataProvider: VillainDetailDataManager {
 }
 
 extension DataProvider: BattleDataManager {
- 
-    func deleteBattle() -> Bool {
-        return false
+    
+    func fetchAllBattles() -> [Battle] {
+        guard let battles = self.database?.fecthAllBattleData() as? [Battle] else { return [] }
+        return battles
     }
+    
+    func createBattle(id: Int, name: String, villain: Villain, superhero: Superhero, winner: String) {
+        self.database?.createBattle(id: id, name: name, villain: villain, superhero: superhero, winner: winner)
+     }
+//    func deleteBattle() -> Bool {
+//        return false
+//    }
 }

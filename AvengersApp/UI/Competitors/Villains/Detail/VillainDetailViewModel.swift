@@ -27,7 +27,7 @@ class VillainDetailViewModel {
     var villainPower: Int?
     var villainPowerImg: String?
     var villainDescription: String?
-    var villainBattles: [String]?
+    var villainBattles: [Battle]?
     
 
     init(villainID: Int, villainDetailDataManager: VillainDetailDataManager) {
@@ -36,13 +36,13 @@ class VillainDetailViewModel {
     }
     
     func fetchVillainAndReloadUI() {
-        guard let villain = self.villainDetailDataManager.fetchVillain(byID: self.villainID) else {return}
+        guard let (villain, battles) = self.villainDetailDataManager.fetchVillain(byID: self.villainID) else {return}
         self.villainImage = villain.image
         self.villainName = villain.name
         self.villainPower = Int(villain.power)
         self.villainPowerImg = "ic_stars_\(villain.power)"
         self.villainDescription = villain.villainDescription
-        self.villainBattles = ["Batalla 1", "Batalla 2", "Batalla 3", "Batalla 4", "Batalla 5"]
+        self.villainBattles = battles
         self.detailViewDelegate?.villainDetailFetched()
     }
     

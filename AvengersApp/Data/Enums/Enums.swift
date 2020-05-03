@@ -46,3 +46,14 @@ enum Colors: String {
     case Win = "Win"
     case Lost = "Lost"
 }
+
+enum CompetitorType {
+    case Villain
+    case Superhero
+}
+
+enum WinnerEnum: String {
+    case Villain = "Villain"
+    case Superhero = "Superhero"
+    case Empty = "Empty"
+}

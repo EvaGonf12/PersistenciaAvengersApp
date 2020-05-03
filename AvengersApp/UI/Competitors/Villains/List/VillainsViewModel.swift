@@ -55,6 +55,5 @@ class VillainsViewModel {
         let villainDetailDataManager = VillainDetailViewModel(villainID: villain.villainID,
                                                               villainDetailDataManager: self.villainDetailDataManager)
         self.viewDelegate?.changeToDetail(detailViewModel: villainDetailDataManager)
-
     }
 }

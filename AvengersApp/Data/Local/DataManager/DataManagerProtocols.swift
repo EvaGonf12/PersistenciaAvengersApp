@@ -14,7 +14,7 @@ protocol SuperherosDataManager {
 }
 
 protocol SuperheroDetailDataManager {
-    func fetchSuperhero(byID id: Int) -> Superhero?
+    func fetchSuperhero(byID id: Int) -> (Superhero, [Battle])?
     func changePowerSuperhero(_ power: Int, withID id: Int, completion: @escaping (Bool) -> ())
 }
 
@@ -24,13 +24,13 @@ protocol VillainDataManager {
 }
 
 protocol VillainDetailDataManager {
-    func fetchVillain(byID id: Int) -> Villain?
+    func fetchVillain(byID id: Int) -> (Villain, [Battle])?
     func changePowerVillain(_ power: Int, withID id: Int, completion: @escaping (Bool) -> ())
 }
 
 protocol BattleDataManager {
-    //func fetchAllBattles() -> [Battle]
-    //func newBattle() -> Battle?
-    func deleteBattle() -> Bool
+    func fetchAllBattles() -> [Battle]
+    func createBattle(id: Int, name: String, villain: Villain, superhero: Superhero, winner: String)
+    //func deleteBattle() -> Bool
 }
 

@@ -35,20 +35,25 @@ extension DataBase: BattleDataBase {
         return .Battle
     }
     
-    func createBattle() -> NSManagedObject? {
+    func createBattle(id: Int, name: String, villain: Villain, superhero: Superhero, winner: String) {
         guard let contextMOB = context(),
             let entity = NSEntityDescription.entity(forEntityName: entityBattle.rawValue,
                                                       in: contextMOB) else {
-            return nil
+            return
         }
         
-        //return Battle(entity: entity,insertInto: context())
-        return nil
+        let newBattle = Battle(entity: entity,insertInto: context())
+        newBattle.id = Int16(id)
+        newBattle.name = name
+        newBattle.villain = villain
+        newBattle.superhero = superhero
+        newBattle.winner = winner
+        self.persist()
     }
     
     func fecthAllBattleData() -> [NSManagedObject]? {
         guard let contextMOB = context() else { return nil }
-        return try? contextMOB.fetch(NSFetchRequest<NSFetchRequestResult>(entityName: entityBattle.rawValue)) as? [NSManagedObject]
+        return try? contextMOB.fetch(NSFetchRequest<NSManagedObject>(entityName: entityBattle.rawValue)) as? [NSManagedObject]
     }
     
     func deleteBattle(data: [NSManagedObject]) -> Bool {
@@ -72,7 +77,7 @@ extension DataBase: VillainDataBase {
             do {
                 let data = try Data.init(contentsOf: pathVillains)
                 let decoder = JSONDecoder()
-                let villains = try decoder.decode([Villain].self, from: data)
+                let villains = try decoder.decode([StructVillain].self, from: data)
                 self.initVillainData(villains)
             } catch {
                 print(error)
@@ -82,31 +87,33 @@ extension DataBase: VillainDataBase {
         }
     }
     
-    func initVillainData(_ villains: [Villain]) {
+    func initVillainData(_ villains: [StructVillain]) {
         guard let contextMOB = context(),
             let entity = NSEntityDescription.entity(forEntityName: entityVillain.rawValue,
                                                     in: contextMOB) else { return }
         
         for villain in villains {
             let newVillain = Villain(entity: entity, insertInto: contextMOB)
-            newVillain.id = villain.id
+            newVillain.id = Int16(villain.id)
             newVillain.name = villain.name
             newVillain.image = villain.image
-            newVillain.power = villain.power
+            newVillain.power = Int16(villain.power)
             newVillain.villainDescription = villain.villainDescription
         }
     }
     
     func fecthAllVillainData() -> [NSManagedObject]? {
         guard let contextMOB = context() else { return nil }
-        return try? contextMOB.fetch(NSFetchRequest<NSFetchRequestResult>(entityName: entityVillain.rawValue)) as? [NSManagedObject]
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityVillain.rawValue)
+        fetchRequest.returnsObjectsAsFaults = false
+        return try? contextMOB.fetch(fetchRequest) as? [NSManagedObject]
     }
     
     func fetchVillain(byID id: Int) -> NSManagedObject? {
         guard let contextMOB = context() else { return nil }
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityVillain.rawValue)
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityVillain.rawValue)
         fetchRequest.predicate = NSPredicate(format: "id = \(id)")
-        
+        fetchRequest.returnsObjectsAsFaults = false
         return try? contextMOB.fetch(fetchRequest).first as? NSManagedObject
     }
         
@@ -131,7 +138,7 @@ extension DataBase: SuperheroDataBase {
             do {
                 let data = try Data.init(contentsOf: pathSuperheros)
                 let decoder = JSONDecoder()
-                let superheros = try decoder.decode([Superhero].self, from: data)
+                let superheros = try decoder.decode([StructSuperhero].self, from: data)
                 self.initSuperheroData(superheros)
             } catch {
                 print(error)
@@ -141,29 +148,29 @@ extension DataBase: SuperheroDataBase {
         }
     }
     
-    func initSuperheroData(_ heros: [Superhero]) {
+    func initSuperheroData(_ heros: [StructSuperhero]) {
         guard let contextMOB = context(),
             let entity = NSEntityDescription.entity(forEntityName: entitySuperhero.rawValue,
                                                     in: contextMOB) else { return }
         
         for hero in heros {
             let newHero = Superhero(entity: entity, insertInto: contextMOB)
-            newHero.id = hero.id
+            newHero.id = Int16(hero.id)
             newHero.name = hero.name
             newHero.image = hero.image
-            newHero.power = hero.power
+            newHero.power = Int16(hero.power)
             newHero.superheroDescription = hero.superheroDescription
         }
     }
     
     func fecthAllSuperheroData() -> [NSManagedObject]? {
         guard let contextMOB = context() else { return nil }
-        return try? contextMOB.fetch(NSFetchRequest<NSFetchRequestResult>(entityName: entitySuperhero.rawValue)) as? [NSManagedObject]
+        return try? contextMOB.fetch(NSFetchRequest<NSManagedObject>(entityName: entitySuperhero.rawValue)) as? [NSManagedObject]
     }
     
     func fetchSuperhero(byID id: Int) -> NSManagedObject? {
         guard let contextMOB = context() else { return nil }
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entitySuperhero.rawValue)
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entitySuperhero.rawValue)
         fetchRequest.predicate = NSPredicate(format: "id = \(id)")
         
         return try? contextMOB.fetch(fetchRequest).first as? NSManagedObject

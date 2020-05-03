@@ -1,21 +1,21 @@
 //
-//  SuperheroDetailViewController.swift
+//  VillainDetailViewController.swift
 //  AvengersApp
 //
-//  Created by Eva Gonzalez Ferreira on 27/04/2020.
+//  Created by Eva Gonzalez Ferreira on 25/04/2020.
 //  Copyright © 2020 Eva Gonzalez Ferreira. All rights reserved.
 //
 
 import UIKit
 import PopupDialog
 
-class SuperheroDetailViewController: UIViewController {
+class VillainDetailViewController: UIViewController {
 
-    @IBOutlet weak var shImage: UIImageView!
-    @IBOutlet weak var shPower: UIImageView!
-    @IBOutlet weak var shPowerEditButton: UIButton!
-    @IBOutlet weak var shDescription: UITextView!
-    @IBOutlet weak var carouserView: UIView!
+    @IBOutlet weak var vImage: UIImageView!
+    @IBOutlet weak var vPower: UIImageView!
+    @IBOutlet weak var vPowerEditButton: UIButton!
+    @IBOutlet weak var vDescription: UITextView!
+    @IBOutlet weak var carouselView: UIView!
     
     fileprivate let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -26,11 +26,11 @@ class SuperheroDetailViewController: UIViewController {
         return cv
     }()
     
-    var viewModel: SuperheroDetailViewModel? {
+    var viewModel: VillainDetailViewModel? {
         didSet { self.viewModel?.viewWasLoaded() }
     }
 
-    convenience init(viewModel: SuperheroDetailViewModel) {
+    convenience init(viewModel: VillainDetailViewModel) {
         self.init()
         self.viewModel = viewModel
     }
@@ -40,17 +40,16 @@ class SuperheroDetailViewController: UIViewController {
         
         self.viewModel?.viewWasLoaded()
         
-        // Carousel
         collectionView.backgroundColor = UIColor.init(named: Colors.WhiteBg.rawValue)
-        carouserView.addSubview(collectionView)
+        carouselView.addSubview(collectionView)
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: carouserView.topAnchor),
+            collectionView.topAnchor.constraint(equalTo: carouselView.topAnchor),
             collectionView.leftAnchor
-                .constraint(equalTo: carouserView.leftAnchor),
+                .constraint(equalTo: carouselView.leftAnchor),
             collectionView.rightAnchor
-            .constraint(equalTo: carouserView.rightAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: carouserView.bottomAnchor)
+            .constraint(equalTo: carouselView.rightAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: carouselView.bottomAnchor)
         ])
         
         collectionView.delegate = self
@@ -67,22 +66,16 @@ class SuperheroDetailViewController: UIViewController {
     }
     
     @IBAction func editButtonAction(_ sender: Any) {
-        // Create a custom view controller
-        let startsVC = PowerPopupViewController(power: self.viewModel?.superheroPower ?? 0)
+        let startsVC = PowerPopupViewController(power: self.viewModel?.villainPower ?? 0)
         
-        // Create the dialog
         let popup = PopupDialog(viewController: startsVC,
                                 buttonAlignment: .horizontal,
                                 transitionStyle: .bounceDown,
                                 tapGestureDismissal: true,
                                 panGestureDismissal: false)
         
-        // Create first button
-        let buttonOne = CancelButton(title: "CANCELAR", height: 60) {
-            print("CANCELAR")
-        }
+        let buttonOne = CancelButton(title: "CANCELAR", height: 60) {}
         
-        // Create second button
         let buttonTwo = DefaultButton(title: "CAMBIAR", height: 60) {
             guard let power = startsVC.power else { return }
             self.viewModel?.changePower(newPower: power)
@@ -91,20 +84,19 @@ class SuperheroDetailViewController: UIViewController {
         buttonOne.layer.cornerRadius = 8
         buttonTwo.layer.cornerRadius = 8
         
-        // Add buttons to dialog
         popup.addButtons([buttonOne, buttonTwo])
         
-        // Present dialog
         present(popup, animated: true, completion: nil)
     }
 
 }
 
-extension SuperheroDetailViewController: SuperheroDetailViewDelegate {
-    func superheroDetailFetched() {
-        self.shImage.image = UIImage.init(named: self.viewModel?.superheroImage ?? "img_hero_default")
-        self.shPower.image = UIImage.init(named: self.viewModel?.superheroPowerImg ?? "img_hero_default")
-        self.shDescription.text = self.viewModel?.superheroDescription
+extension VillainDetailViewController: VillainDetailViewDelegate {
+    
+    func villainDetailFetched() {
+        self.vImage.image = UIImage.init(named: self.viewModel?.villainImage ?? "img_hero_default")
+        self.vPower.image = UIImage.init(named: self.viewModel?.villainPowerImg ?? "img_hero_default")
+        self.vDescription.text = self.viewModel?.villainDescription
     }
     
     func reloadData() {
@@ -112,7 +104,7 @@ extension SuperheroDetailViewController: SuperheroDetailViewDelegate {
     }
 }
 
-extension SuperheroDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension VillainDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100, height: 30)
@@ -120,13 +112,18 @@ extension SuperheroDetailViewController: UICollectionViewDataSource, UICollectio
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel?.superheroBattles?.count ?? 0
+        return self.viewModel?.villainBattles?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarouselCollectionViewCell", for: indexPath) as! CarouselCollectionViewCell
-        cell.color = Colors.Primary
-        cell.title = self.viewModel?.superheroBattles?[indexPath.row]
-        return cell
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarouselCollectionViewCell", for: indexPath) as? CarouselCollectionViewCell,
+           let cellViewModel = self.viewModel?.villainBattles?[indexPath.row],
+           let winner = cellViewModel.winner {
+            
+            cell.title = cellViewModel.name
+            cell.color = WinnerEnum(rawValue: winner) == .Villain ? Colors.Win : Colors.Lost
+            return cell
+        }
+        fatalError()
     }
 }

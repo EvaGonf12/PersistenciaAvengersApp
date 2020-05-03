@@ -1,34 +1,35 @@
 //
-//  VillainsViewController.swift
+//  ListCompetitorViewController.swift
 //  AvengersApp
 //
-//  Created by Eva Gonzalez Ferreira on 24/04/2020.
+//  Created by Eva Gonzalez Ferreira on 02/05/2020.
 //  Copyright © 2020 Eva Gonzalez Ferreira. All rights reserved.
 //
 
 import UIKit
+//CompetitorTableViewCell
 
-class VillainsViewController: UIViewController {
-
+class ListCompetitorViewController: UIViewController {
+    
     lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .plain)
         table.translatesAutoresizingMaskIntoConstraints = false
         table.dataSource = self
         table.delegate = self
-        table.register(UINib(nibName: "VillainTableViewCell", bundle: nil), forCellReuseIdentifier: "VillainTableViewCell")
-        table.estimatedRowHeight = 230
+        table.register(UINib(nibName: "CompetitorTableViewCell", bundle: nil), forCellReuseIdentifier: "CompetitorTableViewCell")
+        table.estimatedRowHeight = 90
         table.rowHeight = UITableView.automaticDimension
         table.separatorStyle = .none
         return table
     }()
     
-    var viewModel: VillainsViewModel
+    var viewModel: ListCompetitorViewModel
     
-    init(viewModel: VillainsViewModel) {
+    init(viewModel: ListCompetitorViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -38,13 +39,13 @@ class VillainsViewController: UIViewController {
 
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
-        title = "Villains"
+        title = "Elige un competidor"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
                                                                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 21, weight: .semibold)]
         navigationController?.navigationBar.barTintColor = UIColor.init(named: Colors.BlueNavBar.rawValue)
@@ -59,20 +60,10 @@ class VillainsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.viewWasLoaded()
     }
-    
-    func changeToDetail(detailViewModel: VillainDetailViewModel) {
-        let villainDetailViewController = VillainDetailViewController(viewModel: detailViewModel)
-        detailViewModel.detailViewDelegate = villainDetailViewController
-        detailViewModel.listViewDelegate = self
-        navigationController?.pushViewController(villainDetailViewController, animated: true)
-    }
-
 }
 
-
-extension VillainsViewController: UITableViewDataSource {
+extension ListCompetitorViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections()
     }
@@ -82,28 +73,32 @@ extension VillainsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "VillainTableViewCell", for: indexPath) as? VillainTableViewCell,
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "CompetitorTableViewCell", for: indexPath) as? CompetitorTableViewCell,
             let cellViewModel = viewModel.viewModel(at: indexPath) {
-            cell.viewModel = cellViewModel
-            return cell
+                cell.viewModel = cellViewModel
+                return cell
         }
         fatalError()
     }
 }
 
-extension VillainsViewController: UITableViewDelegate {
+extension ListCompetitorViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         viewModel.didSelectRow(at: indexPath)
     }
 }
 
-extension VillainsViewController: VillainsViewDelegate {
-    func villainsFetched() {
+extension ListCompetitorViewController: ListCompetitorViewDelegate {
+    func competitorsFetched() {
         self.tableView.reloadData()
     }
     
     func reloadData() {
         self.viewDidLoad()
+    }
+    
+    func closeView() {
+        self.dismiss(animated: true, completion: nil)
     }
 }

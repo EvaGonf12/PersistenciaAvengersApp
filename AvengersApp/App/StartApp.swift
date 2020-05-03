@@ -39,14 +39,22 @@ class StartApp: UIViewController {
         let villainsVC = VillainsViewController(viewModel: villainsVM)
         villainsVM.viewDelegate = villainsVC
         let villainsNavigationController = UINavigationController(rootViewController: villainsVC)
+        
+        let battlesVM = BattlesViewModel(battlesDataManager: self.dataProvider,
+                                         superherosDataManager: self.dataProvider,
+                                         villainsDataManager: self.dataProvider)
+        let battlesVC = BattlesViewController(viewModel: battlesVM)
+        battlesVM.viewDelegate = battlesVC
+        let battlesNavigationController = UINavigationController(rootViewController: battlesVC)
 
         tabBarController.tabBar.tintColor = UIColor.init(named: Colors.Primary.rawValue)
         tabBarController.tabBar.barTintColor = UIColor.init(named: Colors.DarkGray.rawValue)
-        tabBarController.viewControllers = [superherosNavigationController, villainsNavigationController]
+        tabBarController.viewControllers = [superherosNavigationController, battlesNavigationController, villainsNavigationController]
         let imageSize = CGSize(width: 30, height: 30)
         tabBarController.tabBar.items?.first?.image = resizeImage(image: UIImage(named: "ic_tab_heroes")!, targetSize: imageSize)
-        tabBarController.tabBar.items?[1].image = resizeImage(image: UIImage(named: "ic_tab_villain")!, targetSize: imageSize)
-//        tabBarController.tabBar.items?[2].image = UIImage(systemName: "person.3")
+        tabBarController.tabBar.items?[1].image = resizeImage(image: UIImage(named: "ic_tab_battles")!, targetSize: imageSize)
+        tabBarController.tabBar.items?[2].image = resizeImage(image: UIImage(named: "ic_tab_villain")!, targetSize: imageSize)
+        
         let appearance = tabBarController.tabBar.standardAppearance
         appearance.shadowImage = nil
         appearance.shadowColor = nil
