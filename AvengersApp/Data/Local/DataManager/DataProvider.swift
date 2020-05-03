@@ -83,8 +83,9 @@ extension DataProvider: BattleDataManager {
     
     func createBattle(id: Int, name: String, villain: Villain, superhero: Superhero, winner: String) {
         self.database?.createBattle(id: id, name: name, villain: villain, superhero: superhero, winner: winner)
-     }
-//    func deleteBattle() -> Bool {
-//        return false
-//    }
+    }
+    
+    func deleteBattle(_ battleID: Int) {
+        self.database?.deleteBattle(Int16(battleID))
+    }
 }

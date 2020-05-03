@@ -65,9 +65,11 @@ class BattlesViewModel {
         return battlesViewModels[indexPath.row]
     }
 
-    func didSelectRow(at indexPath: IndexPath) {
-//        guard indexPath.row < battlesViewModels.count else { return }
-//        let battle = self.battlesViewModels[indexPath.row]
+    func didSelectRow(at indexPath: IndexPath) {}
+    
+    func deleteBattle(_ battle: BattleCellViewModel) {
+        self.battlesDataManager.deleteBattle(battle.battleID)
+        self.viewDelegate?.reloadData()
     }
 }
 

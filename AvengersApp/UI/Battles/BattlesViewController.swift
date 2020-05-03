@@ -104,6 +104,23 @@ extension BattlesViewController: UITableViewDataSource {
 }
 
 extension BattlesViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let battle = self.viewModel.battlesViewModels[indexPath.row]
+        let deleteAction = UIContextualAction(style: .normal, title: "Eliminar") {[weak self] (action, view, handler) in
+            self?.viewModel.deleteBattle(battle)
+            handler(true)
+        }
+        deleteAction.image = UIImage.init(systemName: "trash")
+        deleteAction.image?.withTintColor(UIColor.white)
+        deleteAction.backgroundColor = UIColor(named: Colors.Red.rawValue)
+        
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+
+        return configuration
+    }
+
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         viewModel.didSelectRow(at: indexPath)

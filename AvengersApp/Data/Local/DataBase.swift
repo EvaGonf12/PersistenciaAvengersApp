@@ -53,16 +53,20 @@ extension DataBase: BattleDataBase {
     
     func fecthAllBattleData() -> [NSManagedObject]? {
         guard let contextMOB = context() else { return nil }
-        return try? contextMOB.fetch(NSFetchRequest<NSManagedObject>(entityName: entityBattle.rawValue)) as? [NSManagedObject]
+        return try? contextMOB.fetch(NSFetchRequest<NSManagedObject>(entityName: entityBattle.rawValue))
     }
     
-    func deleteBattle(data: [NSManagedObject]) -> Bool {
-        let contextMOB = context()
-        data.forEach{ contextMOB?.delete($0) }
+    func deleteBattle(_ battleID: Int16) {
+        guard let contextMOB = context() else {
+            return
+        }
         
-        print("Deleted objects: \(String(describing: contextMOB?.deletedObjects))")
-        try? contextMOB?.save()
-        return true
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityBattle.rawValue)
+        fetchRequest.predicate = NSPredicate(format: "id = \(battleID)")
+        
+        guard let battle = try? contextMOB.fetch(fetchRequest).first else { return }
+        contextMOB.delete(battle)
+        self.persist()
     }
 }
 
@@ -91,7 +95,6 @@ extension DataBase: VillainDataBase {
         guard let contextMOB = context(),
             let entity = NSEntityDescription.entity(forEntityName: entityVillain.rawValue,
                                                     in: contextMOB) else { return }
-        
         for villain in villains {
             let newVillain = Villain(entity: entity, insertInto: contextMOB)
             newVillain.id = Int16(villain.id)
@@ -105,16 +108,14 @@ extension DataBase: VillainDataBase {
     func fecthAllVillainData() -> [NSManagedObject]? {
         guard let contextMOB = context() else { return nil }
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityVillain.rawValue)
-        fetchRequest.returnsObjectsAsFaults = false
-        return try? contextMOB.fetch(fetchRequest) as? [NSManagedObject]
+        return try? contextMOB.fetch(fetchRequest)
     }
     
     func fetchVillain(byID id: Int) -> NSManagedObject? {
         guard let contextMOB = context() else { return nil }
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityVillain.rawValue)
         fetchRequest.predicate = NSPredicate(format: "id = \(id)")
-        fetchRequest.returnsObjectsAsFaults = false
-        return try? contextMOB.fetch(fetchRequest).first as? NSManagedObject
+        return try? contextMOB.fetch(fetchRequest).first
     }
         
     func changeVillainPower(_ power: Int, withID id: Int) -> Bool {
@@ -123,7 +124,6 @@ extension DataBase: VillainDataBase {
         self.persist()
         return true
     }
-    
 }
 
 
@@ -165,7 +165,7 @@ extension DataBase: SuperheroDataBase {
     
     func fecthAllSuperheroData() -> [NSManagedObject]? {
         guard let contextMOB = context() else { return nil }
-        return try? contextMOB.fetch(NSFetchRequest<NSManagedObject>(entityName: entitySuperhero.rawValue)) as? [NSManagedObject]
+        return try? contextMOB.fetch(NSFetchRequest<NSManagedObject>(entityName: entitySuperhero.rawValue))
     }
     
     func fetchSuperhero(byID id: Int) -> NSManagedObject? {
@@ -173,7 +173,7 @@ extension DataBase: SuperheroDataBase {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entitySuperhero.rawValue)
         fetchRequest.predicate = NSPredicate(format: "id = \(id)")
         
-        return try? contextMOB.fetch(fetchRequest).first as? NSManagedObject
+        return try? contextMOB.fetch(fetchRequest).first
     }
     
     func changeSuperheroPower(_ power: Int, withID id: Int) -> Bool {

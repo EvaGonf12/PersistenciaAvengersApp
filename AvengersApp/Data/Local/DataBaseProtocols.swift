@@ -13,7 +13,7 @@ protocol BattleDataBase {
     var entityBattle: EntityEnum { get }
     func createBattle(id: Int, name: String, villain: Villain, superhero: Superhero, winner: String)
     func fecthAllBattleData() -> [NSManagedObject]?
-    func deleteBattle(data: [NSManagedObject]) -> Bool
+    func deleteBattle(_ battleID: Int16)
 }
 
 protocol VillainDataBase {

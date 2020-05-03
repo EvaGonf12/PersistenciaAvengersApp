@@ -31,6 +31,6 @@ protocol VillainDetailDataManager {
 protocol BattleDataManager {
     func fetchAllBattles() -> [Battle]
     func createBattle(id: Int, name: String, villain: Villain, superhero: Superhero, winner: String)
-    //func deleteBattle() -> Bool
+    func deleteBattle(_ battleID: Int)
 }
 
