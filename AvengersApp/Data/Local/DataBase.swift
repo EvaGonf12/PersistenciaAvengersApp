@@ -53,7 +53,10 @@ extension DataBase: BattleDataBase {
     
     func fecthAllBattleData() -> [NSManagedObject]? {
         guard let contextMOB = context() else { return nil }
-        return try? contextMOB.fetch(NSFetchRequest<NSManagedObject>(entityName: entityBattle.rawValue))
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityBattle.rawValue)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: BattleKeysEnum.ID.rawValue, ascending: true)]
+        
+        return try? contextMOB.fetch(fetchRequest)
     }
     
     func deleteBattle(_ battleID: Int16) {
@@ -108,6 +111,7 @@ extension DataBase: VillainDataBase {
     func fecthAllVillainData() -> [NSManagedObject]? {
         guard let contextMOB = context() else { return nil }
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityVillain.rawValue)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: VillainKeysEnum.ID.rawValue, ascending: true)]
         return try? contextMOB.fetch(fetchRequest)
     }
     
@@ -165,7 +169,9 @@ extension DataBase: SuperheroDataBase {
     
     func fecthAllSuperheroData() -> [NSManagedObject]? {
         guard let contextMOB = context() else { return nil }
-        return try? contextMOB.fetch(NSFetchRequest<NSManagedObject>(entityName: entitySuperhero.rawValue))
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entitySuperhero.rawValue)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: SuperheroKeysEnum.ID.rawValue, ascending: true)]
+        return try? contextMOB.fetch(fetchRequest)
     }
     
     func fetchSuperhero(byID id: Int) -> NSManagedObject? {
